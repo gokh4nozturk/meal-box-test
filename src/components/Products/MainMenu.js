@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import { Container, Card, OpenButton } from "../Style";
+import { Container, Card, OpenButton, AnaMenu } from "../Style";
 
 const MainMenu = ({ onSelect, ...item }) => {
   const [toggle, setToggle] = useState(false);
   return (
     <div>
-      <div className="caption">{item.name}</div>
-      <img src={item.image} alt={item.caption} />
-      <OpenButton
-        onClick={() => {
-          setToggle(!toggle);
-        }}
-      >
-        {toggle ? "Kapat" : "Aç"}
-      </OpenButton>
+      <AnaMenu className="ana-menu">
+        <div className="caption">{item.name}</div>
+        <img width="300px" src={item.image} alt={item.caption} />
+        <OpenButton
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+        >
+          {toggle ? "Kapat" : "Aç"}
+        </OpenButton>
+      </AnaMenu>
 
       {toggle && (
         // buraya listing component

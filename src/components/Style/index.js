@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  display: flex;
   flex-wrap: wrap;
+  border: 2px solid red;
 
   .description {
     font-size: 18px;
@@ -23,8 +22,17 @@ export const Card = styled.div`
   .menu-name {
     text-align: center;
   }
+  .menu-img {
+    width: 300px;
+  }
 `;
 
 export const OpenButton = styled.button`
   background-color: green;
+`;
+
+export const AnaMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
 `;

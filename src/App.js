@@ -5,9 +5,9 @@ import styled from "styled-components";
 import MainMenu from "./components/Products/MainMenu";
 import SubMenu from "./components/Products/SubMenu";
 
-const MainWrapper = styled.section`
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+const MainWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   max-width: 85%;
   margin: 0 auto;
   margin-top: 0.5rem;
@@ -15,14 +15,14 @@ const MainWrapper = styled.section`
 
 function App() {
   const [menuler, setMenuler] = useState([]);
-  const [subCategories, setSetCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState([]);
   const [filters, setFilter] = useState([]);
+  const [ekMenu, setEkMenu] = useState([]);
 
   useEffect(() => {
     const [mainMenu, ...categories] = data.menus;
     setMenuler(mainMenu.items);
-    // console.log(mainMenu);
-    setSetCategories(categories);
+    setSubCategories(categories);
   }, []);
 
   const selectSubCategory = (items) => {
@@ -30,12 +30,17 @@ function App() {
     setFilter(subMenus);
   };
 
-  const filteredMenus = useMemo(() => {
-    if (filters.length > 0) {
-      return subCategories.filter((category) => console.log(category));
-    }
-    return [];
-  }, [filters, subCategories]);
+  // const filteredMenus = useMemo(() => {
+  //   if (filters.length > 0) {
+  //     return subCategories.filter((category) => category.length > -1);
+  //   }
+  //   return [];
+  // }, [filters, subCategories]);
+
+  const selectEkMenu = (items) => {
+    const { subMenus } = items;
+    setEkMenu(subMenus);
+  };
 
   return (
     <MainWrapper>
@@ -46,9 +51,9 @@ function App() {
         );
       })}
       <hr />
-      {filteredMenus.map((item) => {
+      {ekMenu.map((item) => {
         // buraya item component
-        return <SubMenu {...item} onSelect={(item) => alert(item.name)} />;
+        return console.log(item);
       })}
     </MainWrapper>
   );
