@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Card, OpenButton, AnaMenu } from "../Style";
 
-const MainMenu = ({ onSelect, ...item }) => {
+const MainMenu = ({ menu, onSelect, ...item }) => {
   const [toggle, setToggle] = useState(false);
   return (
     <div>
@@ -21,12 +21,13 @@ const MainMenu = ({ onSelect, ...item }) => {
         // buraya listing component
         <Container>
           {item.items.map((items) => (
-            <Card>
+            <Card key={items.image}>
+              {/* {console.log(items)} */}
               <div className="card-item menu-name">{items.name}</div>
               <img
                 className="card-item menu-img"
                 src={items.image}
-                alt={item.caption}
+                alt={items.caption}
               />
               <OpenButton
                 className="card-item"
@@ -34,7 +35,7 @@ const MainMenu = ({ onSelect, ...item }) => {
                   onSelect(items);
                 }}
               >
-                Aç
+                Seç
               </OpenButton>
             </Card>
           ))}
