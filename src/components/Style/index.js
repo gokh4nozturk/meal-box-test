@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Main = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +42,9 @@ export const AnaMenu = styled.div`
   flex-direction: column;
   width: 250px;
   margin: 5px;
+  .anamenu-img {
+    width: 250px;
+  }
 `;
 
 export const CartContainer = styled.div`

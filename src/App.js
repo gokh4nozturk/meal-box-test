@@ -43,7 +43,6 @@ function App() {
     const { subMenus = [] } = items;
     setFilter(subMenus);
     addToCart(items);
-    // alert(items.name, items.prices);
   };
 
   const filteredItems = useMemo(() => {

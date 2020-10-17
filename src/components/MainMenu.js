@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import Menus from "./Menus";
-import { Container, Card, OpenButton, AnaMenu } from "./Style";
+import { Main, OpenButton, AnaMenu } from "./Style";
 
 const MainMenu = ({ menu, onSelect, ...item }) => {
   const [toggle, setToggle] = useState(false);
+
+  const isControl = () => {
+    setToggle(!toggle);
+  };
+
   return (
-    <div>
-      <AnaMenu className="ana-menu">
-        <img width="250px" src={item.image} alt={item.caption} />
+    <Main>
+      <AnaMenu className="main-comp-item">
+        <img className="anamenu-img" src={item.image} alt={item.caption} />
         <div className="caption">{item.name}</div>
-        <OpenButton
-          onClick={() => {
-            setToggle(!toggle);
-          }}
-        >
-          {toggle ? "Kapat" : "Aç"}
-        </OpenButton>
+        <OpenButton onClick={isControl}>{toggle ? "Kapat" : "Aç"}</OpenButton>
       </AnaMenu>
 
       {toggle && (
-        // buraya listing component
-        <Menus className="product-list item-1" onSelect={onSelect} {...item} />
+        <Menus
+          className="main-comp-item"
+          isControl={isControl}
+          onSelect={onSelect}
+          {...item}
+        />
       )}
-    </div>
+    </Main>
   );
 };
 export default MainMenu;
