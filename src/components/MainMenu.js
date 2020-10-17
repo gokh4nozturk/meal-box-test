@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Menus from "./Menus";
+
 import { Main, OpenButton, AnaMenu } from "./Style";
 
 const MainMenu = ({ menu, onSelect, ...item }) => {
@@ -11,8 +12,12 @@ const MainMenu = ({ menu, onSelect, ...item }) => {
 
   return (
     <Main>
-      <AnaMenu className="main-comp-item">
-        <img className="anamenu-img" src={item.image} alt={item.caption} />
+      <AnaMenu className="main-comp-item anamenu-item">
+        <img
+          className="anamenu-img anamenu-item"
+          src={item.image}
+          alt={item.caption}
+        />
         <div className="caption">{item.name}</div>
         <OpenButton onClick={isControl}>{toggle ? "Kapat" : "Aç"}</OpenButton>
       </AnaMenu>

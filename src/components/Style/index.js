@@ -8,42 +8,55 @@ export const Main = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid red;
   grid: 2/3;
 
   .description {
+    background: gray;
     font-size: 18px;
   }
 `;
 
 export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 2px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 10px;
+  border: 1px solid white;
+  border-radius: 20px;
+  place-items: center;
 
   .card-item {
-    margin: 2px;
-    padding: 5px;
   }
   .menu-name {
     text-align: center;
   }
   .menu-img {
     width: 250px;
+    border-radius: 20px;
   }
 `;
 
 export const OpenButton = styled.button`
-  background-color: green;
+  background: #3db46d;
+  border-radius: 20px;
+  width: 95%;
+  margin-bottom: 2px;
 `;
 
 export const AnaMenu = styled.div`
   display: flex;
   flex-direction: column;
-  width: 250px;
+  align-items: center;
+  width: 260px;
   margin: 5px;
+  border: 1px solid white;
+  border-radius: 20px;
+
+  .anamenu-item {
+  }
+
   .anamenu-img {
     width: 250px;
+    border-radius: 20px;
   }
 `;
 
@@ -51,11 +64,14 @@ export const CartContainer = styled.div`
   padding: 1rem;
   margin: 1rem;
   display: flex;
+  flex-direction: column;
+  width: 90%;
 
   .cart {
     padding: 1rem;
     margin: 1rem;
     display: flex;
+    justify-content: flex-start;
   }
 
   .cart-header {
@@ -89,15 +105,24 @@ export const CartContainer = styled.div`
   }
   .total {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
+    border: 1px solid red;
   }
-  .total > div {
+  .total div {
     font-size: 1.3rem;
   }
-  .total > div,
-  .total > button {
-    flex: 1;
+
+  .rmv-btn {
+    border-radius: 20px;
+    background: #eb5757;
+    color: white;
+  }
+  .primary {
+    background: #3db46d;
+    border-radius: 20px;
+    width: 50%;
   }
 `;

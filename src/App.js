@@ -4,13 +4,47 @@ import data from "./menu.json";
 import MainMenu from "./components/MainMenu";
 import SubMenu from "./components/SubMenu";
 import Cart from "./components/Cart";
-import Menus from "./components/Menus";
+
+import styled from "styled-components";
 
 function App() {
   const [menuler, setMenuler] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [filters, setFilter] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+
+  const MainWrapper = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .product-list {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      grid-gap: 0.5rem;
+      width: 100%;
+    }
+
+    .item-1 {
+      background-color: #19181f;
+      grid: 1/2;
+      display: flex;
+      margin: 5px;
+
+      padding: 2rem;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .item-2 {
+      background-color: gray;
+      grid: 2/3;
+      margin: 5px;
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+    }
+  `;
 
   useEffect(() => {
     const [mainMenu, ...categories] = data.menus;
@@ -55,23 +89,31 @@ function App() {
   }, [filters, subCategories]);
 
   return (
-    <div className="product-list">
-      <div className="product-list-item item-1">
-        <div>
-          {menuler.map((item) => {
-            return (
-              <MainMenu key={item.key} onSelect={selectSubCategory} {...item} />
-            );
-          })}
+    <MainWrapper>
+      <nav>NAV</nav>
+      <div className="product-list">
+        <div className="product-list-item item-1">
+          <div>
+            {menuler.map((item) => {
+              return (
+                <MainMenu
+                  key={item.key}
+                  onSelect={selectSubCategory}
+                  {...item}
+                />
+              );
+            })}
+          </div>
+          <div>
+            <SubMenu menu={filteredItems} onSelect={selectSubCategory} />
+          </div>
         </div>
-        <div>
-          <SubMenu menu={filteredItems} onSelect={selectSubCategory} />
+        <div className="product-list-item item-2">
+          <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
         </div>
       </div>
-      <div className="product-list-item item-3">
-        <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
-      </div>
-    </div>
+      <footer>FOOTER</footer>
+    </MainWrapper>
   );
 }
 

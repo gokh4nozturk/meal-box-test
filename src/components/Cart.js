@@ -24,7 +24,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
                 <div className="right">
                   {item.price} x {item.count}{" "}
                   <button
-                    className="button"
+                    className="button rmv-btn"
                     onClick={() => removeFromCart(item)}
                   >
                     Remove
@@ -35,19 +35,17 @@ const Cart = ({ cartItems, removeFromCart }) => {
           </ul>
         </div>
         {cartItems.length !== 0 && (
-          <div className="cart">
-            <div className="total">
-              <div>
-                Toplam:{" "}
-                {/* {cartItems.map((item) => {
+          <div className="total">
+            <div>
+              Toplam:{" "}
+              {/* {cartItems.map((item) => {
                   let total = 0;
                   return (total += item.price * item.count);
                 })} */}
-                {cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)}
-                {"₺"}
-              </div>
-              <button className="button primary">İşlem Yap</button>
+              {cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)}
+              {"₺"}
             </div>
+            <button className="button primary">İşlem Yap</button>
           </div>
         )}
       </div>
