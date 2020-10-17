@@ -37,7 +37,12 @@ function App() {
 
   const selectSubCategory = (items) => {
     const { subMenus = [] } = items;
-    if (subMenus.lenght > 0) setFilter(subMenus);
+    //benim denemek için eklediğim kısım
+    console.log(subMenus.length); //Çıktısı : 5
+    subMenus.lenght > 0 ? console.log("okay") : console.log("false"); //Çıktısı : false
+
+    // if (subMenus.lenght > 0)
+    setFilter(subMenus);
     // add to cart
     alert(items.name, items.prices);
   };

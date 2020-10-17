@@ -1,6 +1,6 @@
 import React from "react";
 
-const SubMenu = ({ onSelect, menu }) => {
+const SubMenu = ({ menu }) => {
   return (
     <div>
       {menu.map((subMenu) => (
