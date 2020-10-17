@@ -23,7 +23,7 @@ export const Card = styled.div`
     text-align: center;
   }
   .menu-img {
-    width: 300px;
+    width: 250px;
   }
 `;
 

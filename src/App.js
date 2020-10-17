@@ -5,19 +5,10 @@ import styled from "styled-components";
 import MainMenu from "./components/Products/MainMenu";
 import SubMenu from "./components/Products/SubMenu";
 
-const MainWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 85%;
-  margin: 0 auto;
-  margin-top: 0.5rem;
-`;
-
 function App() {
   const [menuler, setMenuler] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [filters, setFilter] = useState([]);
-  const [menu, setMenu] = useState([]);
 
   useEffect(() => {
     const [mainMenu, ...categories] = data.menus;
@@ -25,23 +16,8 @@ function App() {
     setSubCategories(categories);
   }, []);
 
-  // const filteredMenus = useMemo(() => {
-  //   if (filters.length > 0) {
-  //     //category.length > -1
-  //     return subCategories.filter((category) => {
-  //       menu.push(category.items);
-  //     });
-  //   }
-  //   return [];
-  // }, [filters, subCategories]);
-
   const selectSubCategory = (items) => {
     const { subMenus = [] } = items;
-    //benim denemek için eklediğim kısım
-    console.log(subMenus.length); //Çıktısı : 5
-    subMenus.lenght > 0 ? console.log("okay") : console.log("false"); //Çıktısı : false
-
-    // if (subMenus.lenght > 0)
     setFilter(subMenus);
     // add to cart
     alert(items.name, items.prices);
@@ -57,7 +33,7 @@ function App() {
   }, [filters, subCategories]);
 
   return (
-    <MainWrapper>
+    <div>
       {menuler.map((item) => {
         // buraya category component
         return (
@@ -65,7 +41,7 @@ function App() {
         );
       })}
       <SubMenu menu={filteredItems} onSelect={(item) => alert(item)} />
-    </MainWrapper>
+    </div>
   );
 }
 

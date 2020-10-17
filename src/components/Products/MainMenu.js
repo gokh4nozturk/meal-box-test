@@ -7,7 +7,7 @@ const MainMenu = ({ menu, onSelect, ...item }) => {
     <div>
       <AnaMenu className="ana-menu">
         <div className="caption">{item.name}</div>
-        <img width="300px" src={item.image} alt={item.caption} />
+        <img width="250px" src={item.image} alt={item.caption} />
         <OpenButton
           onClick={() => {
             setToggle(!toggle);
