@@ -33,6 +33,7 @@ const MainMenu = ({ menu, onSelect, ...item }) => {
                 className="card-item"
                 onClick={() => {
                   onSelect(items);
+                  setToggle(!toggle);
                 }}
               >
                 Seç
