@@ -52,11 +52,9 @@ function App() {
 
     .item-2 {
       position: relative;
-      background-color: gray;
+      background: #0f1115;
       grid: 2/3;
       margin: 5px;
-      border-bottom-left-radius: 20px;
-      border-top-left-radius: 20px;
     }
 
     .footer {

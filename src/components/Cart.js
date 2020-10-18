@@ -22,7 +22,9 @@ const Cart = ({ cartItems, removeFromCart }) => {
                 </div>
                 <div>{item.name}</div>
                 <div className="right">
-                  {item.price} x {item.count}{" "}
+                  <div>
+                    {item.price} x {item.count}{" "}
+                  </div>
                   <Button
                     className="button rmv-btn"
                     onClick={() => removeFromCart(item)}

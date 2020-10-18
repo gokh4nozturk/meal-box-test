@@ -69,7 +69,7 @@ export const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 330px;
-  background: white;
+  background: whitesmoke;
   color: #000;
 
   .cart {
@@ -80,7 +80,8 @@ export const CartContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     border: 1px solid;
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 2px 1px rgba(250, 250, 250, 0.2);
   }
 
   .cart-header {
@@ -102,15 +103,17 @@ export const CartContainer = styled.div`
   }
 
   .cart-items li div {
-    padding: 0.5rem;
+    padding: 0.2rem;
   }
 
-  .cart-items li div::last-child {
+  .cart-items li div:last-child {
     flex: 1;
   }
 
   .right {
     text-align: right;
+    display: flex;
+    flex-direction: column;
   }
   .total {
     display: flex;
