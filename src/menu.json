@@ -110,7 +110,7 @@
           "image": "/images/hunkar-begendi.jpg",
           "items": [
             {
-              "name": "Hünkarbeğendi",
+              "name": "Hünkar beğendi",
               "caption": "Hünkarbeğendi",
               "price": "17,45",
               "image": "/images/hunkar-begendi.jpg"
@@ -680,7 +680,7 @@
       "orderTag": "Kırmızı Et - Ana Lezzetler",
       "items": [
         {
-          "name": "Hünkarbeğendi",
+          "name": "Hünkar beğendi",
           "image": "/images/hunkar-begendi.jpg",
           "price": "2,7"
         },
@@ -984,7 +984,7 @@
           "image": "/images/isvec-kofte.jpg"
         },
         {
-          "name": "Hünkarbeğendi",
+          "name": "Hünkar beğendi",
           "caption": "Hünkarbeğendi",
           "image": "/images/hunkar-begendi.jpg"
         },

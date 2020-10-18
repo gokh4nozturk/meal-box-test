@@ -49,6 +49,7 @@ function App() {
     }
 
     .item-2 {
+      position: relative;
       background-color: gray;
       grid: 2/3;
       margin: 5px;

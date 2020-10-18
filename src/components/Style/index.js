@@ -61,17 +61,24 @@ export const AnaMenu = styled.div`
 `;
 
 export const CartContainer = styled.div`
+  position: relative;
   padding: 1rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 330px;
+  background: white;
+  color: #000;
 
   .cart {
-    padding: 1rem;
+    height: 350px;
+    overflow-y: auto;
+    padding: 0.5rem;
     margin: 1rem;
     display: flex;
     justify-content: flex-start;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.5);
   }
 
   .cart-header {
