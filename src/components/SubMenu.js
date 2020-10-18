@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Container, Card, Button } from "./Style";
 
 const SubMenu = ({ onSelect, menu }) => {
+  const [toggle, setToggle] = useState(true);
+
   return (
     <div>
       {menu.map((subMenu) => (
@@ -11,7 +13,6 @@ const SubMenu = ({ onSelect, menu }) => {
           <Container>
             {subMenu.items.map((item) => (
               <Card key={item.image}>
-                {/* {console.log(items)} */}
                 <img
                   className="card-item menu-img"
                   src={item.image}

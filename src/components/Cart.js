@@ -40,10 +40,14 @@ const Cart = ({ cartItems, removeFromCart }) => {
         {cartItems.length !== 0 && (
           <div className="total">
             <div>
-              {console.log(cartItems)}
               Toplam:{" "}
               {formatCurrency(
-                cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)
+                cartItems.reduce((acc, cur) => {
+                  if (!cur.price) return acc;
+                  return (
+                    parseInt(acc) + parseInt(cur.price) * parseInt(cur.count)
+                  );
+                }, 0)
               )}
             </div>
             <Button className="button primary">İşlem Yap</Button>

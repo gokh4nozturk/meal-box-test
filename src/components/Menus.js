@@ -6,7 +6,6 @@ const Menus = ({ onSelect, ...item }) => {
       <Container>
         {item.items.map((items) => (
           <Card key={items.image}>
-            {/* {console.log(items)} */}
             <img
               className="card-item menu-img"
               src={items.image}

@@ -77,7 +77,6 @@ function App() {
   };
 
   const addToCart = (product) => {
-    console.log(product.name + " eklendi.");
     const cartItem = cartItems.slice();
     let alreadyInCart = false;
     cartItem.forEach((item) => {
