@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Card, OpenButton } from "./Style";
+import { Container, Card, Button } from "./Style";
 
 const SubMenu = ({ onSelect, menu }) => {
   return (
@@ -20,14 +20,14 @@ const SubMenu = ({ onSelect, menu }) => {
                 <div className="card-item menu-name">
                   {item.name} {item.price || " "}
                 </div>
-                <OpenButton
+                <Button
                   className="card-item"
                   onClick={() => {
                     onSelect(item);
                   }}
                 >
                   Seç
-                </OpenButton>
+                </Button>
               </Card>
             ))}
           </Container>

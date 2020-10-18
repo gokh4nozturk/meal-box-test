@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, OpenButton } from "./Style";
+import { Container, Card, Button } from "./Style";
 const Menus = ({ isControl, onSelect, ...item }) => {
   return (
     <div>
@@ -13,7 +13,7 @@ const Menus = ({ isControl, onSelect, ...item }) => {
               alt={items.caption}
             />
             <div className="card-item menu-name">{items.name}</div>
-            <OpenButton
+            <Button
               className="card-item"
               onClick={() => {
                 onSelect(items);
@@ -21,7 +21,7 @@ const Menus = ({ isControl, onSelect, ...item }) => {
               }}
             >
               Seç
-            </OpenButton>
+            </Button>
           </Card>
         ))}
       </Container>

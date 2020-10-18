@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CartContainer } from "./Style";
+import { Button, CartContainer } from "./Style";
 
 const Cart = ({ cartItems, removeFromCart }) => {
   return (
@@ -23,12 +23,12 @@ const Cart = ({ cartItems, removeFromCart }) => {
                 <div>{item.name}</div>
                 <div className="right">
                   {item.price} x {item.count}{" "}
-                  <button
+                  <Button
                     className="button rmv-btn"
                     onClick={() => removeFromCart(item)}
                   >
                     Remove
-                  </button>
+                  </Button>
                 </div>
               </li>
             ))}
@@ -45,7 +45,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
               {cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)}
               {"₺"}
             </div>
-            <button className="button primary">İşlem Yap</button>
+            <Button className="button primary">İşlem Yap</Button>
           </div>
         )}
       </div>

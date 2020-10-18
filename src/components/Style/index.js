@@ -35,11 +35,13 @@ export const Card = styled.div`
   }
 `;
 
-export const OpenButton = styled.button`
+export const Button = styled.button`
   background: #3db46d;
   border-radius: 20px;
   width: 95%;
   margin-bottom: 2px;
+  color: white;
+  padding: 2px;
 `;
 
 export const AnaMenu = styled.div`
@@ -116,20 +118,16 @@ export const CartContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    border: 1px solid red;
   }
   .total div {
     font-size: 1.3rem;
   }
 
   .rmv-btn {
-    border-radius: 20px;
     background: #eb5757;
-    color: white;
   }
   .primary {
     background: #3db46d;
-    border-radius: 20px;
     width: 50%;
   }
 `;

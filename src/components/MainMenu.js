@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Menus from "./Menus";
 
-import { Main, OpenButton, AnaMenu } from "./Style";
+import { Main, Button, AnaMenu } from "./Style";
 
 const MainMenu = ({ menu, onSelect, ...item }) => {
   const [toggle, setToggle] = useState(false);
@@ -19,7 +19,7 @@ const MainMenu = ({ menu, onSelect, ...item }) => {
           alt={item.caption}
         />
         <div className="caption">{item.name}</div>
-        <OpenButton onClick={isControl}>{toggle ? "Kapat" : "Aç"}</OpenButton>
+        <Button onClick={isControl}>{toggle ? "Kapat" : "Aç"}</Button>
       </AnaMenu>
 
       {toggle && (
