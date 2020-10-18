@@ -5,6 +5,8 @@ import MainMenu from "./components/MainMenu";
 import SubMenu from "./components/SubMenu";
 import Cart from "./components/Cart";
 
+import Logo from "./assets/logo.jpg";
+
 import styled from "styled-components";
 
 function App() {
@@ -18,6 +20,15 @@ function App() {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .navbar {
+      display: grid;
+      place-items: center;
+    }
+
+    .navbar img {
+      width: 200px;
+    }
 
     .product-list {
       display: grid;
@@ -43,6 +54,12 @@ function App() {
       margin: 5px;
       border-bottom-left-radius: 20px;
       border-top-left-radius: 20px;
+    }
+
+    .footer {
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
     }
   `;
 
@@ -90,7 +107,9 @@ function App() {
 
   return (
     <MainWrapper>
-      <nav>NAV</nav>
+      <nav className="navbar">
+        <img src={Logo} alt="logo" />
+      </nav>
       <div className="product-list">
         <div className="product-list-item item-1">
           <div>
@@ -112,7 +131,9 @@ function App() {
           <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
         </div>
       </div>
-      <footer>FOOTER</footer>
+      <footer className="footer">
+        <p>Meal Box Yemek Hizmetleri</p>
+      </footer>
     </MainWrapper>
   );
 }
