@@ -6,7 +6,7 @@ const SubMenu = ({ onSelect, menu }) => {
   return (
     <div>
       {menu.map((subMenu) => (
-        <>
+        <div>
           <p className="menu-description">{subMenu.description}</p>
           <Container>
             {subMenu.items.map((item) => (
@@ -31,7 +31,7 @@ const SubMenu = ({ onSelect, menu }) => {
               </Card>
             ))}
           </Container>
-        </>
+        </div>
       ))}
     </div>
   );

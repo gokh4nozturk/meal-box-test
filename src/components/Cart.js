@@ -1,4 +1,5 @@
 import React from "react";
+import formatCurrency from "../util";
 
 import { Button, CartContainer } from "./Style";
 
@@ -20,7 +21,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
                 <div>
                   <img src={item.image} alt={item.caption} />
                 </div>
-                <div>{item.name}</div>
+                <div className="product-name">{item.name}</div>
                 <div className="right">
                   <div>
                     {item.price} x {item.count}{" "}
@@ -40,12 +41,9 @@ const Cart = ({ cartItems, removeFromCart }) => {
           <div className="total">
             <div>
               Toplam:{" "}
-              {/* {cartItems.map((item) => {
-                  let total = 0;
-                  return (total += item.price * item.count);
-                })} */}
-              {cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)}
-              {"₺"}
+              {formatCurrency(
+                cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)
+              )}
             </div>
             <Button className="button primary">İşlem Yap</Button>
           </div>

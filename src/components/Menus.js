@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Card, Button } from "./Style";
-const Menus = ({ isControl, onSelect, ...item }) => {
+const Menus = ({ onSelect, ...item }) => {
   return (
     <div>
       <Container>
@@ -20,7 +20,6 @@ const Menus = ({ isControl, onSelect, ...item }) => {
               className="card-item"
               onClick={() => {
                 onSelect(items);
-                isControl();
               }}
             >
               Seç

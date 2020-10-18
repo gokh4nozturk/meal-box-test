@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   grid: 2/3;
+  font-size: 0.9rem;
 
   .description {
     background: gray;
@@ -42,6 +43,7 @@ export const Button = styled.button`
   margin-bottom: 2px;
   color: white;
   padding: 2px;
+  font-size: 0.75rem;
 `;
 
 export const AnaMenu = styled.div`
@@ -52,9 +54,7 @@ export const AnaMenu = styled.div`
   margin: 5px;
   border: 1px solid white;
   border-radius: 20px;
-
-  .anamenu-item {
-  }
+  font-size: 0.9rem;
 
   .anamenu-img {
     width: 250px;
@@ -108,6 +108,12 @@ export const CartContainer = styled.div`
 
   .cart-items li div:last-child {
     flex: 1;
+  }
+
+  .product-name {
+    display: flex;
+    width: 100px;
+    font-size: 0.9rem;
   }
 
   .right {

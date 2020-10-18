@@ -3,6 +3,7 @@ import data from "./menu.json";
 
 import MainMenu from "./components/MainMenu";
 import SubMenu from "./components/SubMenu";
+import Menus from "./components/Menus";
 import Cart from "./components/Cart";
 
 import Logo from "./assets/logo.jpg";
@@ -80,7 +81,7 @@ function App() {
     const cartItem = cartItems.slice();
     let alreadyInCart = false;
     cartItem.forEach((item) => {
-      if (item.name === product.name) {
+      if (item.price === product.price && item.name === product.name) {
         item.count++;
         alreadyInCart = true;
       }

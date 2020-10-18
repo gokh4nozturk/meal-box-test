@@ -24,12 +24,7 @@ const MainMenu = ({ menu, onSelect, ...item }) => {
       </AnaMenu>
 
       {toggle && (
-        <Menus
-          className="main-comp-item"
-          isControl={isControl}
-          onSelect={onSelect}
-          {...item}
-        />
+        <Menus className="main-comp-item" onSelect={onSelect} {...item} />
       )}
     </Main>
   );
