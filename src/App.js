@@ -27,7 +27,9 @@ function App() {
     }
 
     .navbar img {
+      margin: 5px;
       width: 200px;
+      box-shadow: 2px 2px 2px 1px rgba(250, 250, 250, 0.2);
     }
 
     .product-list {
