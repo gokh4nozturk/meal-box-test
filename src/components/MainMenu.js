@@ -18,7 +18,8 @@ const MainMenu = ({ menu, onSelect, ...item }) => {
           src={item.image}
           alt={item.caption}
         />
-        <div className="caption">{item.name}</div>
+        {item.name} {item.price || " "}
+        <div className="caption"></div>
         <Button onClick={isControl}>{toggle ? "Kapat" : "Aç"}</Button>
       </AnaMenu>
 

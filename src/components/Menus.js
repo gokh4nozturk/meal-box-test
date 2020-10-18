@@ -12,7 +12,10 @@ const Menus = ({ isControl, onSelect, ...item }) => {
               src={items.image}
               alt={items.caption}
             />
-            <div className="card-item menu-name">{items.name}</div>
+            <div className="card-item menu-name">
+              {" "}
+              {items.name} {items.price || " "}
+            </div>
             <Button
               className="card-item"
               onClick={() => {
