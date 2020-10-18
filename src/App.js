@@ -3,7 +3,6 @@ import data from "./menu.json";
 
 import MainMenu from "./components/MainMenu";
 import SubMenu from "./components/SubMenu";
-import Menus from "./components/Menus";
 import Cart from "./components/Cart";
 
 import Logo from "./assets/logo.jpg";
@@ -17,6 +16,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   const MainWrapper = styled.section`
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -40,6 +40,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
         {cartItems.length !== 0 && (
           <div className="total">
             <div>
+              {console.log(cartItems)}
               Toplam:{" "}
               {formatCurrency(
                 cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)
